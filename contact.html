@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="contact"> 
+     <nav style="border-bottom: 1px solid #ccc ; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem;">
+        <ul class="navigation-menu">
+            <li><a href=""><img src="logo.png" alt="Metropolia Logo"></a></li>
+        </ul>
+        <ul class="navigation-menu">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+   <section class="text" >
+   
+    <ul style=" margin:0px; padding: 0%;">
+         <h1>Contact Us </h1>
+        <li>Visit us at:</li>
+        <li>Company X</li>
+        <li>Karaportti 2</li>
+        <li>00520 Helsinki</li>
+        <li>Finland</li>
+        <li>Email: info@metropolia.fi</li>
+        <li>Phone: +358 50 1234567</li>
+    </ul>
+    <div>
+        <!-- map -->
+         <div>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.5658631168535!2d24.757041476834164!3d60.2036437508492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x468df419a58ff093%3A0x6a19f6a192c73336!2sKaraportti%202%2C%2002610%20Espoo%2C%20Finland!5e0!3m2!1sen!2snp!4v1699981308331!5m2!1sen!2snp" 
+            width="350" 
+            height="250" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        </div>
+    </div>
+   </section>
+   
+
+
+    <script>
+        function setActiveLink() {
+            const links = document.querySelectorAll('.navigation-menu a');
+            let currentPath = window.location.pathname.split('/').pop();
+            if (currentPath === '') {
+                currentPath = 'Index.html'; 
+            }
+    
+             links.forEach(link => {
+link.classList.remove('active-link')
+                const linkPath = link.getAttribute('href');
+                if (linkPath === currentPath) {
+
+                   link.classList.add('active-link')
+                }
+            });
+        }
+    window.onload = setActiveLink;
+    
+    </script>
+    
+</body>
+</html>

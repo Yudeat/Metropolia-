@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="contact">
+  <nav style="border-bottom: 1px solid #ccc ; display: flex; justify-content: space-between; align-items: center; padding: 0 1rem;">
+        <ul class="navigation-menu">
+            <li><a href=""><img src="logo.png" alt="Metropolia Logo"></a></li>
+        </ul>
+        <ul class="navigation-menu">
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+ <section class="header-section">
+    <h1 style="color:black; margin: 3rem;">Company X</h1>
+    <img src="/wu.jpg" alt="dummy image" style="width:70%;; height: 400px;">
+    <p style="color:black; ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit qui provident, doloremque repellendus dignissimos incidunt esse quis aliquid, aliquam, odio reiciendis eum quia! Quasi libero incidunt nesciunt quas nihil dolorum!</p>
+ </section>
+ <script>
+    function setActiveLink() {
+        const links = document.querySelectorAll('.navigation-menu a');
+        let currentPath = window.location.pathname.split('/').pop();
+        if (currentPath === '') {
+            currentPath = 'Index.html'; 
+        }
+
+        links.forEach(link => {
+            link.classList.remove('active-link');
+            const linkPath = link.getAttribute('href');
+            if (linkPath === currentPath) {
+
+                link.classList.add('active-link')
+               
+            }
+            
+        });
+    }
+   window.onload = setActiveLink;
+
+ </script>
+</body>
+</html>
